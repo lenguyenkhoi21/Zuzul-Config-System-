@@ -1,2 +1,17 @@
 server:
   port: 8991
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://zuzul-eureka-server:8888/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
