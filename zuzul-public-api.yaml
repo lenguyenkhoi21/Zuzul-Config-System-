@@ -1,6 +1,15 @@
 server:
   port: 8990
 
+spring:
+  zipkin:
+    baseURL: http://zipkin-server:9411/
+  sleuth:
+    sampler:
+      probability: 1
+    reactor:
+      instrumentation-type: MANUAL
+
 eureka:
   instance:
     preferIpAddress: true

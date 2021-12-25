@@ -1,6 +1,13 @@
 server:
   port: 7070
 
+spring:
+  zipkin:
+    baseURL: http://zipkin-server:9411/
+  sleuth:
+    sampler:
+      probability: 1
+
 eureka:
   instance:
     preferIpAddress: true
