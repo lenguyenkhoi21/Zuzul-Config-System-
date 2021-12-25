@@ -9,11 +9,6 @@ spring:
       probability: 1
     reactor:
       instrumentation-type: MANUAL
-  cloud:
-    gateway:
-      routes: 
-        - id: zuzul-authentication-service
-          uri: lb://zuzul-authentication-service
 
 eureka:
   instance:
