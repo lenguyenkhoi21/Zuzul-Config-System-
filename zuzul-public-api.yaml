@@ -14,6 +14,10 @@ spring:
       routes: 
         - id: zuzul-authentication-service
           uri: lb://zuzul-authentication-service
+          predicates:
+            - Path=/zuzul-authentication-service-api/**
+          filters:
+            - RewritePath=/zuzul-authentication-service-api, /zuzul-authentication-service
 
 eureka:
   instance:
