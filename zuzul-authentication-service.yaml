@@ -1,7 +1,7 @@
 server:
   port: 7070
 
-keycloak:
+admin-client:
   domain: http://keycloak:8080
   grant_type: password
   admin: admin-system
