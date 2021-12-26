@@ -1,6 +1,14 @@
 server:
   port: 7070
 
+keycloak:
+  domain: http://keycloak:8080
+  grant_type: password
+  admin: admin-system
+  password: admin-system
+  clientID: admin-cli
+  realm: zuzul
+
 spring:
   zipkin:
     baseURL: http://zipkin-server:9411/
