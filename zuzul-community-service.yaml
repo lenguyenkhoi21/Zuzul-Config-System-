@@ -5,7 +5,7 @@ keycloak:
   realm: zuzul
   auth-server-url: http://keycloak:8080/auth/
   ssl-required: none
-  resource: test-client
+  resource: <Your Client Name>
   credentials:
     secret: <Your Client Secret>
   use-resource-role-mappings: true
