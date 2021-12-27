@@ -5,9 +5,9 @@ admin-client:
   domain: http://keycloak:8080
   grant_type: password
   admin: <Your username>
-  password: <Your Password>
+  password: <Your password>
   clientID: admin-cli
-  realm: <Your Realm>
+  realm: <Your realm>
 
 spring:
   zipkin:

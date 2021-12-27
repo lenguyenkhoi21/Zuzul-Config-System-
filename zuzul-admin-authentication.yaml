@@ -7,7 +7,7 @@ admin-client:
   admin: <Your username>
   password: <Your password>
   clientID: admin-cli
-  realm: <Your reaml>
+  realm: <Your realm>
 
 spring:
   zipkin:

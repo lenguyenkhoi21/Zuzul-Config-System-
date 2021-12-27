@@ -2,7 +2,7 @@ server:
   port: 7940
 
 keycloak:
-  realm: zuzul
+  realm: <Your realm>
   auth-server-url: http://keycloak:8080/auth/
   ssl-required: none
   resource: <Your Client Name>
