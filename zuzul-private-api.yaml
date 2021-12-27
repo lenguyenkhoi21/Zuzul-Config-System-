@@ -9,6 +9,52 @@ spring:
       probability: 1
     reactor:
       instrumentation-type: MANUAL
+  cloud:
+    gateway:
+      routes: 
+        - id: zuzul-chat-service
+          uri: lb://zuzul-chat-service
+          predicates:
+            - Path=/zuzul-chat-service-api/**
+          filters:
+            - RewritePath=/zuzul-chat-service-api, /zuzul-chat-service
+        - id: zuzul-community-service
+          uri: lb://zuzul-community-service
+          predicates:
+            - Path=/zuzul-community-service-api/**
+          filters:
+            - RewritePath=/zuzul-community-service-api, /zuzul-community-service
+        - id: zuzul-history-service
+          uri: lb://zuzul-history-service
+          predicates:
+            - Path=/zuzul-history-service-api/**
+          filters:
+            - RewritePath=/zuzul-history-service-api, /zuzul-history-service
+        - id: zuzul-payment-service
+          uri: lb://zuzul-payment-service
+          predicates:
+            - Path=/zuzul-payment-service-api/**
+          filters:
+            - RewritePath=/zuzul-payment-service-api, /zuzul-payment-service
+        - id: zuzul-product-private
+          uri: lb://zuzul-product-private
+          predicates:
+            - Path=/zuzul-product-private-api/**
+          filters:
+            - RewritePath=/zuzul-product-private-api, /zuzul-product-private
+        - id: zuzul-relationship-service
+          uri: lb://zuzul-relationship-service
+          predicates:
+            - Path=/zuzul-relationship-service-api/**
+          filters:
+            - RewritePath=/zuzul-relationship-service-api, /zuzul-relationship-service
+        - id: zuzul-user-service
+          uri: lb://zuzul-user-service
+          predicates:
+            - Path=/zuzul-user-service-api/**
+          filters:
+            - RewritePath=/zuzul-user-service-api, /zuzul-user-service
+
 
 eureka:
   instance:

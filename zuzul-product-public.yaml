@@ -4,10 +4,10 @@ server:
 admin-client:
   domain: http://keycloak:8080
   grant_type: password
-  admin: admin-system
-  password: admin-system
+  admin: <Your username>
+  password: <Your Password>
   clientID: admin-cli
-  realm: zuzul
+  realm: <Your Realm>
 
 spring:
   zipkin:

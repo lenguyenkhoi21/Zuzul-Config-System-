@@ -18,6 +18,12 @@ spring:
             - Path=/zuzul-authentication-service-api/**
           filters:
             - RewritePath=/zuzul-authentication-service-api, /zuzul-authentication-service
+        - id: zuzul-product-public
+          uri: lb://zuzul-product-public
+          predicates:
+            - Path=/zuzul-product-public-api/**
+          filters:
+            - RewritePath=/zuzul-product-public-api, /zuzul-product-public
 
 eureka:
   instance:
