@@ -9,6 +9,15 @@ spring:
       probability: 1
     reactor:
       instrumentation-type: MANUAL
+  cloud:
+    gateway:
+      routes: 
+        - id: zuzul-admin-authentication
+          uri: lb://zuzul-admin-authentication
+          predicates:
+            - Path=/zuzul-admin-authentication-api/**
+          filters:
+            - RewritePath=/zuzul-admin-authentication-api, /zuzul-admin-authentication
 
 eureka:
   instance:
