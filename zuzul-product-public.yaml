@@ -1,0 +1,32 @@
+server:
+  port: 7090
+
+admin-client:
+  domain: http://keycloak:8080
+  grant_type: password
+  admin: admin-system
+  password: admin-system
+  clientID: admin-cli
+  realm: zuzul
+
+spring:
+  zipkin:
+    baseURL: http://zipkin-server:9411/
+  sleuth:
+    sampler:
+      probability: 1
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://zuzul-eureka-server:8888/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
