@@ -1,0 +1,34 @@
+server:
+  port: 7980
+
+keycloak:
+  realm: zuzul
+  auth-server-url: http://keycloak:8080/auth/
+  ssl-required: none
+  resource: test-client
+  credentials:
+    secret: <Your Client Secret>
+  use-resource-role-mappings: true
+  bearer-only: true
+
+spring:
+  zipkin:
+    baseURL: http://zipkin-server:9411/
+  sleuth:
+    sampler:
+      probability: 1
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://zuzul-eureka-server:8888/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
