@@ -1,6 +1,11 @@
 server:
   port: 8000
 
+aws:
+  credentials:
+    accessKeyId: <Secret Key>
+    secretKeyId: <Secret Key>
+
 spring:
   zipkin:
     baseURL: http://zipkin-server:9411/
