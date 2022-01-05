@@ -24,6 +24,13 @@ spring:
             - Path=/zuzul-product-public-api/**
           filters:
             - RewritePath=/zuzul-product-public-api, /zuzul-product-public
+        - id: zuzul-image-service
+          uri: lb://zuzul-image-service
+          predicates:
+            - Path=/zuzul-image-service-api/**
+          filters:
+            - RewritePath=/zuzul-image-service-api, /zuzul-image-service
+
 
 eureka:
   instance:
