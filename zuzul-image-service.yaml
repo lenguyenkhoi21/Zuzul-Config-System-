@@ -1,0 +1,24 @@
+server:
+  port: 8000
+
+spring:
+  zipkin:
+    baseURL: http://zipkin-server:9411/
+  sleuth:
+    sampler:
+      probability: 1
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://zuzul-eureka-server:8888/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
