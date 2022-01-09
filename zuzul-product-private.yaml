@@ -10,6 +10,25 @@ keycloak:
     secret: <Your Client Secret>
   use-resource-role-mappings: true
   bearer-only: true
+  cors: true
+  cors-max-age: 36000
+  cors-allowed-methods: GET, HEAD, POST, PUT, DELETE, TRACE, OPTIONS, PATCH
+  cors-allowed-headers: X-Requested-With, Content-Type, Authorization, Origin, Accept, Access-Control-Request-Method, Access-Control-Request-Headers
+
+admin-client:
+  domain: http://keycloak:8080
+  grant_type: password
+  admin: <Your username>
+  password: <Your password>
+  clientID: admin-cli
+  realm: <Your realm>
+
+aws:
+  credentials:
+    accessKeyId: <Secret>
+    secretKeyId: <Secret>
+    storage: <Secret>
+    path: <Secret>
 
 spring:
   zipkin:
@@ -17,6 +36,11 @@ spring:
   sleuth:
     sampler:
       probability: 1
+  data:
+    mongodb:
+      database: Product
+      host: <Your host>
+      port: <Your Port>
 
 eureka:
   instance:
