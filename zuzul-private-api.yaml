@@ -11,6 +11,14 @@ spring:
       instrumentation-type: MANUAL
   cloud:
     gateway:
+      globalcors:
+        add-to-simple-url-handler-mapping: true
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: <Domain Front-end>
+            allowCredentials: true
+            allowedMethods: "*"
+            allowedHeaders: "*"
       routes: 
         - id: zuzul-chat-service
           uri: lb://zuzul-chat-service
